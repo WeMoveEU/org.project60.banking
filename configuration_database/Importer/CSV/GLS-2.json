@@ -1,0 +1,120 @@
+{
+  "delimiter": ",",
+  "encoding": "CP1252",
+  "header": 1,
+  "title": "GLS {starting_date} - {ending_date} [{md5}]",
+   "defaults": {
+      "tx.currency": "EUR"
+      },
+
+  "rules": [
+       {
+         "from":0,
+         "to":"_ba_bic",
+         "type":"format:%08d"
+    },
+       {
+         "from":1,
+         "to":"_ba_id",
+         "type":"format:%10d"
+    },
+       {
+         "from":2,
+         "to":"tx_batch.reference",
+         "type":"set"
+    },
+
+    {
+      "from": 3,
+      "to": "booking_date",
+      "type": "strtotime:d.m.y"
+    },
+    {
+      "from": 4,
+      "to": "value_date",
+      "type": "strtotime:d.m.y"
+    },
+   {
+         "from":5,
+         "to":"transaction_class",
+         "type":"set"
+    },
+   {
+         "from":6,
+         "to":"transaction_code",
+         "type":"set"
+    },
+
+   {
+      "from": 7,
+      "to": "amount",
+      "type": "amount"
+    },
+   {
+      "from": 8,
+      "to": "credit_debit",
+      "type": "set"
+    },
+
+    {
+      "from": 9,
+      "to": "name",
+      "type": "set"
+    },
+    {
+         "from":10,
+         "to":"empty_name",
+         "type":"set"
+    },
+    {
+         "from":11,
+         "to":"_party_bic",
+         "type":"set"
+    },
+    {
+         "from":12,
+         "to":"_party_iban",
+         "type":"set"
+    },
+    {
+         "from":13,
+         "to":"_tx_id",
+         "type":"set"
+    },
+
+    {
+         "from":14,
+         "to":"purpose",
+         "type":"set"
+    },
+       {
+         "from":15,
+         "to":"tx_batch.reference",
+         "type":"set"
+    },
+
+    {
+         "from":16,
+         "to":"purpose",
+         "type":"append:"
+    },
+    {
+         "from":17,
+         "to":"purpose",
+         "type":"append:"
+    },
+    {
+         "from":18,
+         "to":"other_name",
+         "type":"set"
+    },
+    {
+         "from":19,
+         "to":"city",
+         "type":"set"
+    }
+]
+}
+
+
+
